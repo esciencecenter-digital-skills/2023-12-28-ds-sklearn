@@ -69,12 +69,6 @@ remember to uncomment the `pilot_lesson_site` field in `_config.yml`
 Check carpentry
 {% endcomment %}
 
-{% if info.carpentry == "FIXME" %}
-<div class="alert alert-warning">
-It looks like you are setting up a website for a workshop but you haven't specified the carpentry type in the <code>_data/data.csv</code> file (current value in <code>_data/data.csv</code>: "<strong>{{ info.carpentry }}</strong>", possible values: <code>swc</code>, <code>dc</code>, <code>lc</code>, <code>cp</code>, <code>ds</code>, or <code>pilot</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
-</div>
-{% endif %}
-
 {% comment %}
 Read correct lesson meta from esciencecenter-digital-skills/workshop-metadata
 {% endcomment %}
@@ -114,7 +108,7 @@ Check DS curriculum
 {% endcomment %}
 
 {% if info.carpentry == "ds" %}
-{% unless info.curriculum == "ds-cr" or info.curriculum == "ds-docker" or info.curriculum == "ds-dl-intro" or info.curriculum == "ds-gpu" or info.curriculum == "ds-parallel" or info.curriculum == "ds-rpackaging" or info.curriculum == "ds-geospatial"%}
+{% unless info.curriculum == "ds-cr" or info.curriculum == "ds-sklearn" or info.curriculum == "ds-docker" or info.curriculum == "ds-dl-intro" or info.curriculum == "ds-gpu" or info.curriculum == "ds-parallel" or info.curriculum == "ds-rpackaging" or info.curriculum == "ds-geospatial"%}
 <div class="alert alert-warning">
 It looks like you are setting up a website for a Digital Skills curriculum but you haven't specified the curriculum type in the <code>_data/data.csv</code> file (current value in <code>_data/data.csv</code>: "<strong>{{ info.curriculum }}</strong>", possible values: <code>ds-cr</code>, <code>ds-docker</code>, <code>ds-dl-intro</code>, <code>ds-gpu</code>, <code>ds-parallel</code> or <code>ds-rpackaging</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
 </div>
